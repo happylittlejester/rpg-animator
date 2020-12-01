@@ -21,10 +21,20 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
+
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Run();
+        }
     }
 
     public void Jump()
     {
         animator.SetTrigger("Jump");
+    }
+
+    public void Run()
+    {
+        animator.SetTrigger("Run");
     }
 }
