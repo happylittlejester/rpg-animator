@@ -22,19 +22,19 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        if(Input.GetKeyUp(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift))
         {
-            Run();
+            animator.SetBool("Run", true);
         }
+        else
+        {
+            animator.SetBool("Run", false);
+        }
+
     }
 
     public void Jump()
     {
         animator.SetTrigger("Jump");
-    }
-
-    public void Run()
-    {
-        animator.SetTrigger("Run");
     }
 }
