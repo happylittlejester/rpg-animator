@@ -43,19 +43,19 @@ public class CastSpell : MonoBehaviour
                 coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 4f);
                 break;
             case 2:
-                coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 2);
+                coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 3f);
                 break;
             case 3:
                 coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 3f);
                 break;
             case 4:
-                coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 5f);
+                coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 6f);
                 break;
             case 5:
-                coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 2);
+                coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 3f);
                 break;
         }
-        coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 2);
+        coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 2.3f);
         StartCoroutine(coroutine);
     }
 
