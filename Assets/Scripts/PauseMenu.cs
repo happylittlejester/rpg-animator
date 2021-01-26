@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour
 
         if (buttonPressed == quitButton)
         {
-
+            Application.Quit();
         }
     }
 }

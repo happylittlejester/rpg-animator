@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CastSpell : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class CastSpell : MonoBehaviour
     [SerializeField] GameObject[] skillParticles;
     [SerializeField] AudioClip[] AudioForSkills;
     [SerializeField] AudioSource audioSource;
+    public Slider manaBar;
+    public Slider healthBar;
 
     void Start()
     {
@@ -45,18 +48,23 @@ public class CastSpell : MonoBehaviour
         {
             case 1:
                 coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 4f);
+                UseMana();
                 break;
             case 2:
                 coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 3f);
+                UseMana();
                 break;
             case 3:
                 coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 3f);
+                UseMana();
                 break;
             case 4:
                 coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 6f);
+                UseMana();
                 break;
             case 5:
                 coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 3f);
+                UseMana();
                 break;
         }
         coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 2.3f);
@@ -68,4 +76,15 @@ public class CastSpell : MonoBehaviour
         yield return new WaitForSeconds(time);
         obj.SetActive(false);
     }
+
+    public void UseMana()
+    {
+        manaBar.value -= 2;
+
+        if (manaBar.value == 0)
+        {
+            healthBar.value -= 0.3f;
+        }
+    }
+
 }
