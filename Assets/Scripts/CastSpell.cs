@@ -38,8 +38,10 @@ public class CastSpell : MonoBehaviour
     {
         animator.SetTrigger("Skill" + skillNumber);
         skillParticles[skillNumber - 1].SetActive(true);
+        audioSource.clip = AudioForSkills[skillNumber - 1];
+        audioSource.Play();
 
-        switch(skillNumber)
+        switch (skillNumber)
         {
             case 1:
                 coroutine = WaitToEnableObject(skillParticles[skillNumber - 1], 4f);
