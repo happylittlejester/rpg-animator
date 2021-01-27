@@ -10,11 +10,20 @@ public class CastSpell : MonoBehaviour
     [SerializeField] GameObject[] skillParticles;
     [SerializeField] AudioClip[] AudioForSkills;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] lowHealth;
+    [SerializeField] AudioSource heartBeat;
+    [SerializeField] AudioSource backgroundMusic;
     public Slider manaBar;
     public Slider healthBar;
 
     void Start()
     {
+        manaBar.value = manaBar.maxValue;
+        healthBar.value = healthBar.maxValue;
+
+        heartBeat.Pause();
+        backgroundMusic.Play();
+
         animator = GetComponent<Animator>();
 
         for (int i = 0; i < skillParticles.Length; i++)
@@ -83,7 +92,14 @@ public class CastSpell : MonoBehaviour
 
         if (manaBar.value == 0)
         {
-            healthBar.value -= 0.3f;
+            healthBar.value -= 1;
+            if (healthBar.value == 2)
+            {
+                heartBeat.clip = lowHealth[0];
+                heartBeat.Play();
+                backgroundMusic.volume = 0.5f;
+
+            }
         }
     }
 
