@@ -97,7 +97,7 @@ public class CastSpell : MonoBehaviour
             {
                 heartBeat.clip = lowHealth[0];
                 heartBeat.Play();
-                backgroundMusic.volume = 0.5f;
+                backgroundMusic.volume = 0.4f;
 
             }
         }

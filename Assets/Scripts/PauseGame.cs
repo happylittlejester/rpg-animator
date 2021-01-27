@@ -9,8 +9,8 @@ public class PauseGame : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("PauseMenu");
             Time.timeScale = 0f;
+            SceneManager.LoadScene("PauseMenu");
         }
     }
 }
