@@ -98,8 +98,8 @@ public class CastSpell : MonoBehaviour
                 heartBeat.clip = lowHealth[0];
                 heartBeat.Play();
 
-                heartBeat.volume = 5;
-                backgroundMusic.volume = 0.4f;
+                heartBeat.volume = 15;
+                backgroundMusic.volume = 0.3f;
             }
         }
     }
